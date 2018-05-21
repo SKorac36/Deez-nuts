@@ -1,46 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 09:10:20 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/21 09:26:17 by skorac           ###   ########.fr       */
+/*   Created: 2018/05/21 14:06:11 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/21 14:23:07 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int ft_strlen(char *str)
+char	*ft_strcpy(char *s1, char *s2)
 {
-	int i = 0;
+	int i;
 
-	while (str[i] != '\0')
+	i = 0;
+	while (s2[i] != '\0')
 	{
+		s2[i] = s1[i];
 		i++;
 	}
-	return (i);
-}
-
-char	*ft_strrchr(const char *s, int i)
-{
-	char *str;
-	str = (char *)s;
-	
-	while (*str != i)
-	{
-		if (*str == '\0')
-			return (NULL);
-		str--;
-	}
-	return (str);
-}
-
-int		main()
-{
-	const char str[] = "hello";
-	write(1, ft_strrchr(str, 108), 1);
-	write(1, "\n", 1);
-	return(0);
+	s2[i] = '\0';
+	return (s1);
 }
