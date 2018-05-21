@@ -6,17 +6,17 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 08:45:56 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/21 09:34:24 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/21 11:36:39 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int i)
 {
 	char *str;
 
-	str = (char *)s; 
+	str = (char *)s;
 	while (*str != i)
 	{
 		if (*str == '\0')
@@ -25,14 +25,5 @@ char	*ft_strchr(const char *s, int i)
 		}
 		str++;
 	}
-	return(str);	
-}
-
-int		main()
-{
-	int o = 111;
-	const char str[] = "hello";
-	write(1, ft_strchr(str, o), 1);
-	write(1, "\n", 1);
-	return (0);
+	return (str);
 }
