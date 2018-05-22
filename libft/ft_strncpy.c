@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 08:35:54 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/22 12:36:47 by skorac           ###   ########.fr       */
+/*   Created: 2018/05/22 12:44:09 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/22 13:00:04 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strncpy(char *d, const char *s, size_t n)
 {
-	unsigned char	*buff;
-	size_t			i;
 
-	buff = (unsigned char *)s;
+	size_t i;
+
 	i = 0;
 	while (i < n)
 	{
-		buff = s[i];
+		d[i] = s[i];
 		i++;
 	}
+	return(d);
 }

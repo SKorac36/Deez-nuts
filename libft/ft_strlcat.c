@@ -1,21 +1,46 @@
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/22 13:20:11 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/22 14:02:55 by skorac           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <string.h>
+#include <stdio.h>
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned	int i;
-	unsigned	int j;
-	unsigned	int k;
-
-	i = 0;
-	while (dest[i] != '\0')
-		i++;
+	size_t i;
+	size_t j;
+	size_t k;
+	
+ 	i = 0;
 	j = 0;
-	while (src[j] != '\0' && j < size)
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
 	k = 0;
-	while (src[k] != '\0')
-		k++;
-	return (k + size);
+    while (dst[i] != '\0')
+        i++;
+    while (src[j] != '\0' && j < size)
+    {
+        dst[i + j] = src[j];
+        j++;
+    }
+    dst[i + j] = '\0';
+ -   while (src[k] != '\0')
+        k++;
+    return (k + size);
+}
+
+int main()
+{
+	char dst[] = "hello";
+	const char src[] = "hello";
+	size_t sup = strlcat(dst, src, 4 );
+	size_t  ret = ft_strlcat(dst, src, 4);
+	printf("%zu\n", sup);
+	printf("%zu\n", ret);
+   return(0);	
+
 }

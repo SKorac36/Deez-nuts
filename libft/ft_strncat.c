@@ -1,17 +1,30 @@
-char	*ft_strncat(char *dest, const char *src, size_t n)
-{
-	size_t i;
-	size_t j;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/22 13:00:35 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/22 13:19:00 by skorac           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	j = 0;
-	i = ft_strlen(dest);
-	while (src[j] && j < n)
+#include "libft.h"
+
+char	*ft_strncat(char *dest, char *src, int nb)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = ft_strlen(dest);
+	while (i < nb && src[i])
 	{
-		dest[i] = src[j];
-		i++;
+		dest[j] = src[i];
 		j++;
+		i++;
 	}
-	dest[i] = '\0';
+	dest[j] = '\0';
 	return (dest);
 }
-
