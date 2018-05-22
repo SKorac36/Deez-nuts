@@ -6,10 +6,10 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 13:20:11 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/22 14:02:55 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/22 14:11:15 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+//#include <string.h>
 #include <stdio.h>
 size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -28,7 +28,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
         j++;
     }
     dst[i + j] = '\0';
- -   while (src[k] != '\0')
+	while (src[k] != '\0')
         k++;
     return (k + size);
 }
@@ -37,9 +37,9 @@ int main()
 {
 	char dst[] = "hello";
 	const char src[] = "hello";
-	size_t sup = strlcat(dst, src, 4 );
+//	size_t sup = strlcat(dst, src, 4 );
 	size_t  ret = ft_strlcat(dst, src, 4);
-	printf("%zu\n", sup);
+//	printf("%zu\n", sup);
 	printf("%zu\n", ret);
    return(0);	
 
