@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 12:16:56 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/22 12:43:15 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/23 10:43:18 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n)
 	{
 		if (s1 != s2)
 		{
-			return(s1 - s2);
+			return (s1 - s2);
 		}
 		if (n)
 		{

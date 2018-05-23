@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 12:34:06 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/21 14:38:52 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/23 10:39:03 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,32 @@
 # include <unistd.h>
 # include <stdio.h>
 
-int		ft_atoi(char *str);				//1
-int		ft_strcmp(char *s1, char *s2);	//2
-int		ft_strlen(char *str);			//3
-char	*ft_strdup(char *src);			//4
-char 	*ft_strcpy(char *S1, char *s2);	//5
-char	*ft_strcat(char *dest, char *src); //6
-char	*ft_strchr(const char *s, int i); //7
-char	*ft_strstr(char *lrg, char *sml);	//8
-int		ft_strncmp(char *s1, char *s2, unsigned int n); //9
-int		ft_isdigit(int i);				//10
-int		ft_isalpha(int i);				//12
-int		ft_isalnum(int i);				//13
-int		ft_isascii(int i);				//14
-int		ft_isprint(int i);				//15
-void		ft_putchar(char c);			//16
-void		ft_putnbr(char c);			//17
-void		ft_putstr(char *str);		//18
-void		ft_strclr(char *str);		//19
-int		ft_tolower(int i);				//20
-int		ft_toupper(int i);				//21
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *s1, const void *s2, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t size);
+void	*ft_memmove(void *str1, const void *str2, size_t n);
+void	*ft_memchr(const void *str, int c, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
+int		ft_atoi(char *str);				
+int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
+char	*ft_strdup(char *src);
+char 	*ft_strcpy(char *S1, char *s2);
+char	*ft_strcat(char *dest, char *src);
+char	*ft_strchr(const char *s, int i);
+char	*ft_strstr(char *lrg, char *sml);
+int		ft_strncmp(char *s1, char *s2, unsigned int n);
+int		ft_isdigit(int i);
+int		ft_isalpha(int i);
+int		ft_isalnum(int i);
+int		ft_isascii(int i);
+int		ft_isprint(int i);
+void		ft_putchar(char c);
+void		ft_putnbr(char c);
+void		ft_putstr(char *str);
+void		ft_strclr(char *str);
+int		ft_tolower(int i);
+int		ft_toupper(int i);
 
 #endif

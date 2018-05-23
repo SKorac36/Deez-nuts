@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 11:31:15 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/22 12:41:19 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/23 10:36:03 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	unsigned char 	*s;
-	unsigned char 	cee;
+	unsigned char	*s;
+	unsigned char	cee;
 	size_t			i;
 
 	s = (unsigned char *)str;
