@@ -45,9 +45,11 @@ int		ft_isascii(int i);
 int		ft_isprint(int i);
 void	ft_putchar(char c);
 void	ft_putnbr(char c);
-void	ft_putstr(char *str);
+void	ft_putstr(char const *str);
 void	ft_strclr(char *str);
 int		ft_tolower(int i);
 int		ft_toupper(int i);
+void	*ft_memalloc(size_t size);
+void	ft_putendl(char const *s);
 
 #endif
