@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:37:38 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/26 11:58:42 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/26 12:15:18 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ char	*ft_strtrim(char const *s)
 	while (s[++i] == '\n' || s[i] == '\t' || s[i] == ' ')
 		len--;
 	if (len <= 0)
-		len = 0;i
+		len = 0;
 	ret = (char *)malloc(sizeof(ret) * ((len - i) + 1));
 	if (ret == NULL)
 		return (NULL);
 	s += i;
 	i = -1;
 	while (++i < len)
-		ret[i] == *s++;
+		ret[i] = *s++;
 	ret[i] = '\0';
 	return (ret);
 }
