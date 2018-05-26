@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 09:44:46 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/26 10:05:43 by skorac           ###   ########.fr       */
+/*   Created: 2018/05/26 09:15:01 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/26 09:17:14 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	i;
-	size_t	len;
-	char	*str;
-
-	i = 0;
-	len = ft_strlen(src);
-	str = (char *)malloc(sizeof(*str) * (len + 1));
-	while (i < len)
-	{
-		str[i] = src[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	else
+		return (0);
 }

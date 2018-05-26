@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 11:00:43 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/23 10:53:31 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/26 10:28:52 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int a;
-	int b;
+	size_t a;
+	size_t b;
 
-	a = 0;
-	while (dest[a] != '\0')
-		a++;
+	a = ft_strlen(dest);
 	b = 0;
 	while (src[b] != '\0')
 	{

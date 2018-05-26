@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 12:34:06 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/24 14:13:34 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/26 10:57:03 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
 int		ft_atoi(const char *str);
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *str);
-char	*ft_strdup(char *src);
+char	*ft_strdup(const char *src);
 char	*ft_strcpy(char *s1, char *s2);
 char	*ft_strncpy(char *d, const char *s, size_t n);
 char	*ft_strcat(char *dest, char *src);
@@ -50,6 +50,14 @@ void	ft_strclr(char *str);
 int		ft_tolower(int i);
 int		ft_toupper(int i);
 void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
 void	ft_putendl(char const *s);
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
 
 #endif
