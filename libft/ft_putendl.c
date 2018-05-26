@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/26 08:10:59 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/26 08:17:17 by skorac           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -6,21 +17,3 @@ void	ft_putendl(char const *s)
 	ft_putstr(s);
 	ft_putchar('\n');
 }
-int		main(int argc, const char *argv[])
-{
-	int		arg;
-
-	alarm(5);
-	if (argc == 1)
-		return (0);
-	else if ((arg = atoi(argv[1])) == 1)
-		ft_putendl("lorem ipsum dolor sit amet");
-	else if (arg == 2)
-		ft_putendl("  lorem\nipsum\rdolor\tsit amet  ");
-	else if (arg == 3)
-		ft_putendl("");
-	else if (arg == 4)
-		ft_putendl("lorem ipsum do\0lor sit amet");
-	return (0);
-}
-
