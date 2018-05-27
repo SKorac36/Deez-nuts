@@ -16,24 +16,24 @@ char	*ft_strtrim(char const *s)
 {
 	size_t	i;
 	size_t	len;
+	size_t size;
 	char	*ret;
+
 	if (s == NULL)
 		return (NULL);
+	i = 0;
 	len = ft_strlen(s);
-	while (s[len - 1] == '\n' || s[len - 1] == '\t' || s[len - 1] == ' ')
+	while (s[len - 1]  == '\n' || s[len - 1] == '\t' || s[len - 1] == ' ')
 		len--;
-	i = -1;
-	while (s[++i] == '\n' || s[i] == '\t' || s[i] == ' ')
-		len--;
-	if (len <= 0)
-		len = 0;
-	ret = (char *)malloc(sizeof(ret) * ((len - i) + 1));
-	if (ret == NULL)
-		return (NULL);
-	s += i;
-	i = -1;
-	while (++i < len)
-		ret[i] = *s++;
-	ret[i] = '\0';
+	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
+		i++;
+	size = len - i;
+	ret = (char *)malloc(sizeof(ret) *((size) * (size) + 1));
+	while (i < len) 
+	{
+		ret[i] = s[i];
+		i++;
+	}
+	ret[ft_strlen(ret)] = '\0';
 	return (ret);
 }
