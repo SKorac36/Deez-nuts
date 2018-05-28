@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 12:16:56 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/28 12:53:26 by skorac           ###   ########.fr       */
+/*   Created: 2018/05/28 09:54:57 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/28 11:10:17 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *str1, const void *str2, size_t n)
+char	*ft_strmap(char const *s, char (*f) (char))
 {
-	const unsigned char *s1;
-	const unsigned char *s2;
+	char	*new;
+	size_t	len;
+	size_t	i;
 
-	s1 = (const unsigned char *)str1;
-	s2 = (const unsigned char *)str2;
-	if (n == 0 || s1 == s2)
-		return (0);
-	while (n--)
+	len = ft_strlen(s);
+	new = ft_strnew(len);
+	i = 0;
+	while (s[i])
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		if (n)
-		{
-			s1++;
-			s2++;
-		}
+		new[i] = (*f)(s[i]);
+		i++;
 	}
-	return (0);
+	return (new);
 }

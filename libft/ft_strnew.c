@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 08:53:00 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/26 09:01:44 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/28 12:33:18 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	str = (char*)malloc(sizeof(*str) * (size + 1));
-	while (i < size)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	return (str);
+	return (ft_memalloc(size + 1));
 }
