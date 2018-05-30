@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:37:38 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/30 09:34:56 by skorac           ###   ########.fr       */
+/*   Created: 2018/05/30 09:06:42 by skorac            #+#    #+#             */
+/*   Updated: 2018/05/30 10:10:39 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static size_t	gitlen(int n)
 {
-	size_t	i;
-	size_t	j;
-	size_t	len;
-	char	*ret;
+	size_t		i;
 
-	i = 0;
-	j = 0;
-	len = ft_strlen(s);
-	while (s[len - 1] == '\n' || s[len - 1] == '\t' || s[len - 1] == ' ')
-		len--;
-	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
+	i = 1;
+	while (n /= 10)
 		i++;
-	if (len < i)
-		return ("");
-	else
-		ret = (char *)malloc(sizeof(ret) * (len - i));
-	while (i < len)
+	return (i);
+}
+
+char			*ft_itoa(int n)
+{
+	char			*str;
+	size_t			len;
+	unsigned int	tmp;
+
+	len = gitlen(n);
+	tmp = n;
+	if (n < 0)
 	{
-		ret[j] = s[i];
-		j++;
-		i++;
+		tmp = -n;
+		len++;
 	}
-	ret[j] = '\0';
-	return (ret);
+	str = ft_strnew(len);
+	str[--len] = tmp % 10 + 48;
+	while (tmp /= 10)
+		str[--len] = tmp % 10 + 48;
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }

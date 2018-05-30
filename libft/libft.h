@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 12:34:06 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/28 14:35:36 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/30 11:51:25 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int		ft_isalnum(int i);
 int		ft_isascii(int i);
 int		ft_isprint(int i);
 void	ft_putchar(char c);
-void	ft_putnbr(char c);
 void	ft_putstr(char const *str);
 void	ft_strclr(char *str);
 int		ft_tolower(int i);
@@ -66,5 +65,9 @@ void	ft_striter(char *s, void (*f) (char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
+char	*ft_itoa(int n);
+void	ft_putnbr(int n);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_strplit(const char *s, char c);
 
 #endif
