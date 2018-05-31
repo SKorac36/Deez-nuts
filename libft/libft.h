@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 12:34:06 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/31 12:04:30 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/31 13:53:29 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
 char	*ft_itoa(int n);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_strplit(const char *s, char c);
+char	**ft_strplit(const char *s, char c);
 
 #endif
