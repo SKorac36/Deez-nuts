@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 12:34:06 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/30 11:51:25 by skorac           ###   ########.fr       */
+/*   Updated: 2018/05/31 12:04:30 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memset(void *str, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *s1, const void *s2, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t size);
