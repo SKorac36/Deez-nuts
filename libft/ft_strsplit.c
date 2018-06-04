@@ -1,76 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit2.c                                     :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 12:50:13 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/31 14:10:25 by skorac           ###   ########.fr       */
+/*   Created: 2018/06/04 08:49:25 by skorac            #+#    #+#             */
+/*   Updated: 2018/06/04 13:09:14 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strtrim(char const *s, char c)
-{
-	size_t	i;
-	size_t	j;
-	size_t	len;
-	char	*ret;
-
-	i = 0;
-	j = 0;
-	len = ft_strlen(s);
-	while (s[len - 1] == c)
-		len--;
-	while (s[i] == c)
-		i++;
-	if (len < i)
-		return (NULL);
-	else
-		ret = (char *)malloc(sizeof(ret) * (len - i));
-	while (i < len)
-	{
-		ret[j] = s[i];
-		j++;
-		i++;
-	}
-	ret[j] = '\0';
-	return (ret);
-}
-
-size_t find_next(char const *s, char c)
-{
-	size_t i;
-
-	i = 0;
-	while (s[i] != c)
-		i++;
-	return (i);
-}
-
-char	*extract(char const *s, char c, size_t n)
-{
-	size_t i;
-	size_t j;
-	char *ret;
-
-	i = find_next(s, c);
-	j = 0;
-	while (i < n)
-		i++;
-	ret  = (char *)malloc(sizeof(ret) * (i + 1));
-	while (j < i)
-	{
-		ret[j] = s[j];
-		j++;	
-	}
-	ret[j] = '\0';
-	return (ret);
-}
-
-size_t	numwords(char const *s, char c)
+static size_t	numwords(char const *s, char c)
 {
 	size_t	count;
 	size_t	sep;
@@ -91,36 +33,36 @@ size_t	numwords(char const *s, char c)
 	return (count);
 }
 
-char	**ft_strsplit(char const *s, char c)
+static int		ft_len(char const *s, char c)
 {
-	char **array;
-	size_t i;
+	int len;
 
-	i = 0;
-	
-	array = (char **)malloc(sizeof(char *) * numwords(s,c));
-	while (i < numwords(s,c))
-	{
-		array[i] = extract(s, c , find_next(s, c));
-		i++;
-	}
-	return (array);
+	len = 0;
+	while (s[len] != c && s[len] != '\0')
+		len++;
+	return (len);
 }
 
-int main()
+char			**ft_strsplit(char const *s, char c)
 {
-	char *s1;
-	char **arr;
-	int i;
+	char	**array;
+	int		index;
+	int		word_count;
 
-	i = 0;
-	s1 = "***hello**tehre**hejejl";
-	arr = ft_strsplit(s1, '*');
-	ft_putnbr(numwords(s1, '*'));
-	while (arr[i])
+	index = 0;
+	word_count = numwords(s, c);
+	array = (char **)malloc(sizeof(*array) * (word_count + 1));
+	while (word_count--)
 	{
-		ft_putendl(arr[i]);
-		i++;
+		while (*s == c && *s != '\0')
+			s++;
+		array[index] = ft_strsub(s, 0, ft_len(s, c));
+		if (array[index] == NULL)
+			return (NULL);
+		s += ft_len(s, c);
+		index++;
 	}
-	return (0);
+	array[index] = NULL;
+	free(array);
+	return (array);
 }

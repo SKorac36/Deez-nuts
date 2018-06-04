@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 09:02:54 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/04 12:41:15 by skorac           ###   ########.fr       */
+/*   Created: 2018/06/04 10:31:18 by skorac            #+#    #+#             */
+/*   Updated: 2018/06/04 10:58:49 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	if (*as != NULL)
-		free(*as);
-	*as = NULL;
+	del(((*alst)->content), (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }
