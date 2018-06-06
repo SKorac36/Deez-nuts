@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 09:54:57 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/04 12:44:02 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/06 14:22:24 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ char	*ft_strmap(char const *s, char (*f) (char))
 	len = ft_strlen(s);
 	new = ft_strnew(len);
 	i = 0;
+	if (!new)
+		return (NULL);
 	while (s[i])
 	{
 		new[i] = (*f)(s[i]);
 		i++;
 	}
+	new[i] = '\0';
 	return (new);
 }

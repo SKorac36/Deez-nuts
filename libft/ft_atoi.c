@@ -6,11 +6,11 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 08:46:57 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/26 10:47:41 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/06 12:30:26 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
 int		ft_atoi(const char *str)
 {

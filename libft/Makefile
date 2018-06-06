@@ -6,7 +6,7 @@
 #    By: skorac <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 09:00:33 by skorac            #+#    #+#              #
-#    Updated: 2018/06/04 08:42:56 by skorac           ###   ########.fr        #
+#    Updated: 2018/06/06 14:02:57 by skorac           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,18 @@ NAME = libft.a
 COM  = gcc
 FLAGS = -Wall -Wextra -Werror
 SRC = *.c
-OBJS = *.o
-HEAD = libft.h
+OBJ = *.o
+HEAD = libft.h 
 
 $(NAME): $(HEAD)
 	$(COM) -c $(FLAGS) $(SRC) -I $(HEAD)
-	ar -rc $(NAME) $(OBJS)
+	ar -rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 all : $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
