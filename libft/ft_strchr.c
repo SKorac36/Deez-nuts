@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 08:45:56 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/23 11:07:25 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/08 14:19:26 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strchr(const char *s, int i)
 	while (*str != i)
 	{
 		if (*str == '\0')
-		{
 			return (NULL);
-		}
 		str++;
 	}
 	return (str);

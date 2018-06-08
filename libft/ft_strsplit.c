@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 08:49:25 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 09:27:18 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/08 14:38:17 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static size_t	numwords(char const *s, char c)
 
 	sep = 0;
 	count = 0;
-	while (*s != '\0')
+	while (*s)
 	{
 		if (sep == 1 && *s == c)
 			sep = 0;
@@ -38,7 +38,7 @@ static int		ft_len(char const *s, char c)
 	int len;
 
 	len = 0;
-	while (s[len] != c && s[len] != '\0')
+	while (s[len] != c && s[len])
 		len++;
 	return (len);
 }
@@ -56,7 +56,7 @@ char			**ft_strsplit(char const *s, char c)
 		return (NULL);
 	while (word_count--)
 	{
-		while (*s == c && *s != '\0')
+		while (*s == c && *s)
 			s++;
 		array[index] = ft_strsub(s, 0, ft_len(s, c));
 		s += ft_len(s, c);

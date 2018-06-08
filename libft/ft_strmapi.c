@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:06:19 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/06 14:21:10 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/08 14:32:19 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!new)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		new[i] = f(i, s[i]);
 		i++;

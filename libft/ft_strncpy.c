@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 12:44:09 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/24 12:15:28 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/08 14:33:54 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncpy(char *d, const char *s, size_t n)
 	size_t i;
 
 	i = 0;
-	while (s[i] != '\0' && i < n)
+	while (s[i] && i < n)
 	{
 		d[i] = s[i];
 		i++;

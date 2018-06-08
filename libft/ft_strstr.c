@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 09:04:34 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/24 09:32:51 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/08 14:39:04 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_match(const char *haystack, const char *needle)
 	size_t index;
 
 	index = 0;
-	while (needle[index] != '\0')
+	while (needle[index])
 	{
 		if (needle[index] != haystack[index])
 			return (0);
