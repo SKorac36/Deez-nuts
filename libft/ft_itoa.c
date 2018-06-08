@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 09:06:42 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/31 09:58:57 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/08 10:10:58 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char			*ft_itoa(int n)
 		tmp = -1 * n;
 		len++;
 	}
-	str = ft_strnew(len);
 	if (!(str = ft_strnew(len)))
 		return (NULL);
 	str[--len] = tmp % 10 + 48;
