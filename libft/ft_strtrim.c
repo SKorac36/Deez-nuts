@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:37:38 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 14:40:18 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/12 13:52:39 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t	i;
-	size_t	j;
-	size_t	len;
+	int		i;
+	int		j;
+	int		len;
 	char	*ret;
 
-	i = 0;
-	j = 0;
-	len = ft_strlen(s);
-	while (s[len - 1] == '\n' || s[len - 1] == '\t' || s[len - 1] == ' ')
-		len--;
-	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
-		i++;
-	if (len < i)
-		return ("");
-	else if (!(ret = (char *)malloc(sizeof(ret) * (len + 1))))
-		return (NULL);
-	while (i < len)
+	if (s)
 	{
-		ret[j] = s[i];
-		j++;
-		i++;
+		i = 0;
+		j = 0;
+		len = (int)ft_strlen(s);
+		while (s[len - 1] == '\n' || s[len - 1] == '\t' || s[len - 1] == ' ')
+			len--;
+		while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
+			i++;
+		if (len < i)
+			len = -1;
+		if (!(ret = ft_strnew(len + 1)))
+			return (NULL);
+		while (i < len)
+			ret[j++] = s[i++];
+		ret[j] = '\0';
+		return (ret);
 	}
-	ret[j] = '\0';
-	return (ret);
+	return (NULL);
 }

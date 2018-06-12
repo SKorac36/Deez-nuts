@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 08:00:44 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 13:55:49 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/12 14:20:03 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_memalloc(size_t size)
 	mem = malloc(size);
 	if (!mem)
 		return (NULL);
-	ft_bzero(mem, size);
+	ft_memset(mem, 0, size);
 	return (mem);
 }

@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 09:17:27 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 14:25:29 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/12 13:00:43 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_striter(char *s, void (*f) (char *))
 {
-	size_t i;
+	int i;
 
 	i = 0;
-	while (s[i])
-	{
-		f(&s[i]);
-		i++;
-	}
+	while (s != NULL && s[i] && f != NULL)
+		f(&s[i++]);
 }

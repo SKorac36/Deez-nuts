@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 09:09:29 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 14:25:08 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/12 14:22:15 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	if (ft_strcmp(s1, s2) == 0)
-		return (1);
+	if (s1 != NULL && s2 != NULL)
+	{
+		if (ft_strcmp(s1, s2) == 0)
+			return (1);
+		else
+			return (0);
+	}
 	else
 		return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 12:56:09 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 14:19:05 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/12 11:56:26 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_strclr(char *str)
 {
-	size_t i;
+	int i;
 
 	i = 0;
-	while (str[i])
+	while (str != NULL && str[i])
 		str[i++] = '\0';
 }

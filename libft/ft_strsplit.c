@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 08:49:25 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 14:38:17 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/12 14:44:38 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,16 @@ char			**ft_strsplit(char const *s, char c)
 
 	index = 0;
 	word_count = numwords(s, c);
-	array = (char **)malloc(sizeof(*array) * (word_count + 1));
-	if (!array)
+	array = (char **)malloc(sizeof(array) * (word_count + 1));
+	if (!array || ft_len(s, c) == 0 || word_count == 0)
 		return (NULL);
 	while (word_count--)
 	{
 		while (*s == c && *s)
 			s++;
 		array[index] = ft_strsub(s, 0, ft_len(s, c));
+		if (!array[index])
+			return (NULL);
 		s += ft_len(s, c);
 		index++;
 	}
