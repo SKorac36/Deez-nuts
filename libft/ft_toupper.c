@@ -6,16 +6,16 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 08:25:38 by skorac            #+#    #+#             */
-/*   Updated: 2018/05/23 10:28:46 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/13 11:28:05 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int i)
+int		ft_toupper(int c)
 {
-	if (i >= 97 && i <= 122)
-		return (i - 32);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
 	else
-		return (i);
+		return (c);
 }

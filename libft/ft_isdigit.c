@@ -6,15 +6,15 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 12:14:55 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/08 13:41:14 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/13 11:25:44 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int i)
+int		ft_isdigit(int c)
 {
-	if (i >= 48 && i <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);
