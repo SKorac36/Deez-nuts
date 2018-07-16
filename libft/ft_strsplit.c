@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 08:49:25 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/19 11:52:38 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/26 08:50:33 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,4 @@ char			**ft_strsplit(char const *s, char c)
 		return (array);
 	}
 	return (NULL);
-}
-int	main()
-{
-	char *s;
-	char **array;
-	int i = 0;
-
-	s = "***stefan**hello***gehegr**";
-	array = ft_strsplit(s, '*');
-	while (array[i])
-	{
-		ft_putendl(array[i]);
-		i++;
-	}
-	return (0);
 }

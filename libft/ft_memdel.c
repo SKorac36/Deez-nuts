@@ -6,7 +6,7 @@
 /*   By: skorac <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 08:42:53 by skorac            #+#    #+#             */
-/*   Updated: 2018/06/21 11:46:22 by skorac           ###   ########.fr       */
+/*   Updated: 2018/06/26 08:46:57 by skorac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	ft_memdel(void **ap)
 {
-	if (*ap != NULL)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
-	else
-		*ap = NULL;
+	free(*ap);
+	*ap = NULL;
 }
